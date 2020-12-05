@@ -8,12 +8,12 @@ import java.io.IOException;
 public class MainP {
     public static void main(String[] args) throws IOException  {
         Source s = Source.newBuilder("llvm", new File("/JniExample/JniProjectC/main.bc")).build();
-        Context c = Context.newBuilder().allowNativeAccess(true).build();
+        Context c = Context.newBuilder().allowAllAccess(true).allowNativeAccess(true).build();
 
         Value e = c.eval(s);
-        //Value fb = e.getMember("getInfo");
-        //String res = fn.execute().asString();
+        Value fb = e.getMember("getInfo");
+        String res = fn.execute().asString();
 
-        //System.out.println(res);
+        System.out.println(res);
     }
 }
