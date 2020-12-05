@@ -16,7 +16,7 @@ public class MainP {
 
         if(res.isString())
             System.out.println(res.asString());
-        if(res.isInt())
+        if(res.isNumber())
             System.out.println(res.asInt());
     }
 }
