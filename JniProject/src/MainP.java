@@ -12,8 +12,8 @@ public class MainP {
 
         Value e = c.eval(s);
         Value fb = e.getMember("getInfo");
-        String res = fb.execute().asString();
+        Value res = fb.execute();
 
-        System.out.println(res);
+        System.out.println(res.toString());
     }
 }
