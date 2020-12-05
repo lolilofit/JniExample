@@ -11,7 +11,9 @@ int getNumbersCount(int i) {
 
 char* getInfo() {
     int size = 2;
-    char res* = (char*)malloc(sizeof(char)*size);
+    char* res;
+    res = (char*)malloc(sizeof(char)*size);
+    
     sprintf(res, "%d", 2);
 
     return res;
