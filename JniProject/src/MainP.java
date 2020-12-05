@@ -12,7 +12,7 @@ public class MainP {
 
         Value e = c.eval(s);
         Value fb = e.getMember("getInfo");
-        String res = fn.execute().asString();
+        String res = fb.execute().asString();
 
         System.out.println(res);
     }
