@@ -14,9 +14,9 @@ public class MainP {
         Value fb = e.getMember("getInfo");
         Value res = fb.execute();
 
-        if(res.isString())
+//        if(res.isString())
             System.out.println(res.asString());
-        if(res.isNumber())
-            System.out.println(res.asInt());
+ //       if(res.isNumber())
+   //         System.out.println(res.asInt());
     }
 }
