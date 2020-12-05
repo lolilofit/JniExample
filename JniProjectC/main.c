@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include ""
 
 int getNumbersCount(int i) {
     int cnt = 0;
@@ -9,11 +10,13 @@ int getNumbersCount(int i) {
     return cnt;
 }
 
+POLYGLOT_FROM_STRING(char*)
+
 char* getInfo() {
     int size = 2;
     char* res;
     res = (char*)malloc(sizeof(char)*size);
-    
+
     sprintf(res, "%d", 2);
 
     return res;
