@@ -10,9 +10,10 @@ public class MainP {
         Source s = Source.newBuilder("llvm", new File("/JniExample/JniProjectC/main.bc")).build();
         Context c = Context.newBuilder().allowNativeAccess(true).build();
 
-        Value fn = c.eval(s).getMember("getInfo");
-        String res = fn.execute().asString();
+        Value e = c.eval(s);
+        //Value fb = e.getMember("getInfo");
+        //String res = fn.execute().asString();
 
-        System.out.println(res);
+        //System.out.println(res);
     }
 }
