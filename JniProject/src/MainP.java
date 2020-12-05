@@ -6,7 +6,7 @@ import java.io.File;
 
 public class MainP {
     public static void main(String[] args) {
-        Source s = Source.newBuilder("llvm", new File("/JniExample/JniProject/main.bc"));
+        Source s = Source.newBuilder("llvm", new File("/JniExample/JniProject/main.bc")).build();
         Context c = Context.newBuilder().allowNativeAccess(true).build();
 
         Value fn = c.eval(s).getMember("getInfo");
