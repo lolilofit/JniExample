@@ -10,7 +10,7 @@
    
    ```java -Djava.library.path="SomePath\cmake-build-release" Main```
    
-   2. Вторая часть задания выполнялась в докере на debian.
+2. Вторая часть задания выполнялась в докере на debian.
       Состоит из JniProject/MainP.java, JniProjectC/main.c
       Файл main.bc собран с clang и graalvm для java11.
       
