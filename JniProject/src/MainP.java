@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class MainP {
     public static void main(String[] args) throws IOException  {
-        Source s = Source.newBuilder("llvm", new File("/JniExample/JniProjectC/main.bc")).build();
+        Source s = Source.newBuilder("llvm", new File("../../JniProjectC/main.bc")).build();
         Context c = Context.newBuilder().allowAllAccess(true).build();
 
         Value e = c.eval(s);
