@@ -1,21 +1,33 @@
 #include <stdlib.h>
 #include "polyglot.h"
-
-int getNumbersCount(int i) {
-    int cnt = 0;
-    while(i > 0) {
-        i = i / 10;
-        cnt++;
-    }
-    return cnt;
-}
+#include <stdio.h>
 
 void* getInfo() {
-    int size = 2;
+    FILE* c = popen("grep '^model name\\|^cpu cores' /proc/cpuinfo", "r");
+    
+    int size = 256;
     char* res;
     res = (char*)malloc(sizeof(char)*size);
 
-    sprintf(res, "%d", 2);
+    char buf[256];
+    int n = 0;
 
-    return polyglot_from_string_n(res, size - 1, "utf-8");
+    if(c != NULL) {
+	
+    	if((n = fread(buf, 1, 255, c)) <= 0) {
+		sprintf(res, "error");
+	}
+	else {
+		buf[n] = '\0';
+		sprintf(res, "%s", buf);
+		
+	}
+	pclose(c);
+    }
+    else {
+	sprintf(res, "error");
+    }
+  
+    
+    return polyglot_from_string_n(res, n, "ascii");
 }
